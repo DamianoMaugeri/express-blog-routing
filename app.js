@@ -23,3 +23,8 @@ app.use('/posts', postRouter);
 app.listen(port, () => {
     console.log('hello nel listen');
 })
+
+process.on('SIGINT', () => {
+    app.close();
+    process.exit(0);
+});
